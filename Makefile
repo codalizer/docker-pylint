@@ -6,7 +6,7 @@
 
 REGISTRY_HOST=ghcr.io
 OWNER=codalizer
-NAME=docker-pylint
+NAME=$(shell basename -s .git `git config --get remote.origin.url`)
 IMAGE=$(REGISTRY_HOST)/$(OWNER)/$(NAME)
 
 LATEST_TAG=$(IMAGE):latest
